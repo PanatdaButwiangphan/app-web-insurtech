@@ -95,13 +95,11 @@
   <div class="form">
     <form class="register-form">
       <h1 style="color: white">Register</h1>
-      <input type="text" placeholder="FirstName" class="color" />
-      <input type="text" placeholder="email" />
-
-      <input type="text" placeholder="TelephoneNo." />
-
-      <input type="text" placeholder="Company" />
-
+      <input type="text" placeholder="FirstName" class="color" [(ngModel)]="username" name="username">
+      <input type="text" placeholder="email" [(ngModel)]="email" name="email">
+      <input type="text" placeholder="TelephoneNo." [(ngModel)]="PhoneNo" name="telephoneNo">
+      <input type="text" placeholder="Company" [(ngModel)]="Company" name="company">
+      
       <div class="card">
         <p-multiSelect
           [style]="{

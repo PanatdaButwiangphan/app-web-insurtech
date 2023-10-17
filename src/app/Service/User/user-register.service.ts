@@ -12,7 +12,7 @@ export class UserRegisterService{
 
 
   userRegister(
-    username: string,
+    firsname: string,
     email:string,
     phoneNo:string,
     company:string,
@@ -20,7 +20,7 @@ export class UserRegisterService{
       ){
     return this.http
     .post<any>('http://114.119.173.133:8080/insurtech/api/v1/userRegister',{
-      username: username,
+      username: firsname,
         email: email,
         phoneNo: phoneNo,
         company: company,
@@ -70,6 +70,8 @@ export class UserRegisterService{
       { params }
     );
   }
+
+  
   }
 
   
