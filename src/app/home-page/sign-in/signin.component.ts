@@ -30,7 +30,7 @@ export class SigninComponent {
               this.userRegisterService.setUsername(username);
               this.router.navigate(['/menu']);
             } else {
-                         // ดึงค่า username ออกมาจาก response
+            // ดึงค่า username ออกมาจาก response
             const username = (response as any).userUsername;
             // ตั้งค่า username ใน UserRegisterService
             this.userRegisterService.setUsername(username);
@@ -38,12 +38,12 @@ export class SigninComponent {
 
             }
           } else {
-            this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
+            this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
           }
         },
         (error) => {
-          //console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
-          this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+          console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
+          this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
         }
       );
     } else {
@@ -51,10 +51,12 @@ export class SigninComponent {
     }
   }
 
+
+
   openDialog(message: string) {
     this.dialog.open(DialogSignInComponent, {
       data: { message },
     });
   }
-  
+
 }

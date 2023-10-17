@@ -1,9 +1,90 @@
 <app-navbar-complet></app-navbar-complet>
 
 <div class="btmenu">
-<p-button icon="pi pi-microsoft" styleClass="p-button-rounded p-button-secondary" routerLink="/menu"></p-button>
+  <p-button
+    icon="pi pi-microsoft"
+    styleClass="p-button-rounded p-button-secondary"
+    routerLink="/menu"
+  ></p-button>
 </div>
 
 <div class="title">
- <h2>Reward Setting</h2>
+  <h2>Reward Setting</h2>
+</div>
+
+<div class="card">
+  <div class="row" style="display: flex; justify-content: center">
+    <div class="p-float-label" style="margin-top: 2rem">
+      <input
+        pInputText
+        id="username"
+        [style]="{
+          width: '95%',
+          height: '40px',
+          'border-radius': '10px'
+        }"
+      />
+      <label>วันที่จับรางวัล</label>
+    </div>
+    <div class="p-float-label" style="margin-top: 2rem">
+      <input
+        pInputText
+        id="username"
+        [style]="{
+          width: '95%',
+          height: '40px',
+          'border-radius': '10px'
+        }"
+      />
+      <label>เวลาที่จับรางวัล</label>
+    </div>
+  </div>
+  <div class="row" style="display: flex; justify-content: center">
+    <div class="p-float-label">
+      <input
+        pInputText
+        id="username"
+        [style]="{
+          width: '95%',
+          height: '40px',
+          'border-radius': '10px'
+        }"
+      />
+      <label>รางวัลที่</label>
+    </div>
+    <div class="p-float-label">
+      <input
+        pInputText
+        id="username"
+        [style]="{
+          width: '95%',
+          height: '40px',
+          'border-radius': '10px'
+        }"
+      />
+      <label>จำนวนรางวัล</label>
+    </div>
+  </div>
+  <div class="row" style="display: flex; justify-content: center">
+    <div class="p-float-label">
+      <input
+        pInputText
+        id="username"
+        [style]="{
+          width: '97.8%',
+          height: '40px',
+          'border-radius': '10px'
+        }"
+      />
+      <label>รางวัลที่</label>
+    </div>
+  </div>
+  <div class="row" style="display: flex; justify-content: center">
+    <div class="p-float-label" style="margin-left: 8rem">
+      <p-button label="เพิ่ม"></p-button>
+    </div>
+    <div class="p-float-label" style="margin-left: -3rem; margin-right: -3rem">
+      <p-button label="เคลียร์"></p-button>
+    </div>
+  </div>
 </div>
