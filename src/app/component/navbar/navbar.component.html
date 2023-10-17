@@ -1,4 +1,4 @@
-<div class="card">
+<!--<div class="card">
   <p-menubar
     styleClass="custom-menubar"
     [style]="{
@@ -30,6 +30,27 @@
       'background': 'linear-gradient(180deg, #247CF7 0%, #215195 100%)',
       'box-shadow':' 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)'}"
       ></p-button>
+    </ng-template>
+  </p-menubar>
+</div>-->
+<div class="card">
+  <p-menubar>
+    <ng-template pTemplate="start">
+      <div class="text-center">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <img src="assets/images/logo.png" />
+        </div>
+
+        <p style="color: white; font-size: 12px; margin-bottom: 0px">
+          YIP IN TSOI
+        </p>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <button pButton pRipple label="Register" class="bt-regis ml-2" (click)="regis()"></button>
+      <button pButton pRipple label="Sign in" class="bt-sing-in" (click)="login()"></button>
     </ng-template>
   </p-menubar>
 </div>

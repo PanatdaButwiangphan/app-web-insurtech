@@ -1,1 +1,21 @@
 
+:host button {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+::ng-deep .card {
+  border-radius: 0;
+  background: linear-gradient(0deg, #2C4387 0%, #2C4387 100%), #1D8CF8;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+::ng-deep .bt-sing-in {
+border-radius: 6px;
+border: 1px solid #247CF7;
+background: linear-gradient(180deg, #247CF7 0%, #215195 100%);
+box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+::ng-deep .bt-regis {
+  border: 0;
+  background: none;
+}
