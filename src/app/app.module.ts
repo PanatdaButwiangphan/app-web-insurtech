@@ -69,6 +69,7 @@ import { DialogSignInComponent } from './dialog-sign-in/dialog-sign-in.component
 import { MatDialogModule } from '@angular/material/dialog';
 import { ListRewardComponent } from './home-page/list-reward/list-reward.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -125,10 +126,13 @@ import { ListRewardComponent } from './home-page/list-reward/list-reward.compone
     RouterModule,
     HttpClientModule,
     ProgressSpinnerModule,
-     MatDialogModule,
+    MatDialogModule,
   ],
 
-  providers: [MessageService,ConfirmationService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
