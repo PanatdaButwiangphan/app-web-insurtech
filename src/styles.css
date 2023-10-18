@@ -5,16 +5,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
-.footer {
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(180deg, rgba(101.07, 59.97, 202.73, 0.80) 0%, rgba(46.45, 61.15, 150.66, 0.80) 52%);
-  border-radius: 100% 100% 0 0; /* ปรับค่า border-radius เพื่อให้เป็นครึ่งวงกลม */
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  overflow: hidden; /* เพื่อให้ส่วนที่เกินจากครึ่งวงกลมไม่แสดง */
-}
+
 
  body{
     width: auto;
