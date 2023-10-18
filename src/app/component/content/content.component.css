@@ -11,6 +11,29 @@
     height: 10%; /* ความสูงเท่ากับความสูงของ div.card */
 
   }
+  /* เพิ่มสไตล์ที่ทำให้ Carousel เป็น responsive */
+.ok {
+  flex:1;
+  width: 100%;
+  max-width: 600px; /* ปรับขนาดตามที่ต้องการ */
+  margin: 0 auto; /* จัดให้อยู่ตรงกลางของหน้าจอ */
+
+}
+
+/* เพิ่มสไตล์ที่ทำให้ภาพภายใน Carousel ยืดหรือย่อตามขนาด */
+.p-carousel img {
+  width: 100%;
+  height: auto;
+}
+
+/* Media query สำหรับขนาดหน้าจอที่เล็ก */
+@media screen and (max-width: 600px) {
+  .card {
+    max-width: 100%; /* ปรับขนาดตามขนาดหน้าจอที่เล็ก */
+  }
+}
+
+
   ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link{
     background: linear-gradient(0deg, rgb(119, 168, 233) 0%, rgb(44, 67, 135) 100%), rgb(29, 140, 248) !important;
     color: white !important;
@@ -39,6 +62,7 @@ color: whit;
   margin: 1rem;
   border-radius: 10px;
   background: linear-gradient(180deg, #247CF7 0%, rgba(170, 144, 243, 0.12) 100%);
+  
 }
 
 
@@ -64,3 +88,27 @@ color: whit;
 .text {
   font-family: 'Inter', sans-serif;
 }
+
+
+
+/* ปรับสไตล์สำหรับหน้าจอโทรศัพท์ */
+@media screen and (max-width: 767px) {
+  .p-carousel img  {
+    overflow-x: auto; /* เพิ่มการเลื่อนในแนวนอนเมื่ออยู่ในโทรศัพท์ */
+    white-space: nowrap; /* ไม่ให้ข้อมูลขึ้นบรรทัดใหม่ */
+    width: 100%; /* ทำให้รูปภาพเต็มกว้าง */
+    height: auto; /* รักษาสัดส่วน */
+  }
+  
+  /* ปรับสไตล์ของ p-carousel ให้เต็มหน้าจอ */
+  .p-carousel {
+    width: 100vw;
+  }
+  
+  /* ปรับสไตล์ของรูปภาพใน p-carousel */
+ 
+}
+
+
+
+
