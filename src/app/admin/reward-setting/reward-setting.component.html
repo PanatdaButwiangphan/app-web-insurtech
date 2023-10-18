@@ -12,79 +12,150 @@
   <h2>Reward Setting</h2>
 </div>
 
-<div class="card">
-  <div class="row" style="display: flex; justify-content: center">
-    <div class="p-float-label" style="margin-top: 2rem">
-      <input
-        pInputText
-        id="username"
-        [style]="{
-          width: '95%',
-          height: '40px',
-          'border-radius': '10px'
-        }"
-      />
-      <label>วันที่จับรางวัล</label>
-    </div>
-    <div class="p-float-label" style="margin-top: 2rem">
-      <input
-        pInputText
-        id="username"
-        [style]="{
-          width: '95%',
-          height: '40px',
-          'border-radius': '10px'
-        }"
-      />
-      <label>เวลาที่จับรางวัล</label>
+
+<div class="card-container">
+  <div class="grid">
+    <div class="field col-12 md:col-6">
+      <div class="card flex justify-content-center">
+        <p-card [style]="{ width: '360px' }">
+          <ng-template pTemplate="header">
+            <div class="row" style="display: flex; justify-content: center">
+              <div
+                class="p-float-label"
+                style="margin-top: 2rem; margin-left: 0.5rem"
+              >
+                <input
+                  pInputText
+                  id="username"
+                  [style]="{
+                    width: '95%',
+                    height: '40px',
+                    'border-radius': '10px'
+                  }"
+                />
+                <label>วันที่จับรางวัล</label>
+              </div>
+              <div class="p-float-label" style="margin-top: 2rem">
+                <input
+                  pInputText
+                  id="username"
+                  [style]="{
+                    width: '95%',
+                    height: '40px',
+                    'border-radius': '10px'
+                  }"
+                />
+                <label>เวลาที่จับรางวัล</label>
+              </div>
+            </div>
+            <div class="row" style="display: flex; justify-content: center">
+              <div
+                class="p-float-label"
+                style="margin-top: 2rem; margin-left: 0.5rem"
+              >
+                <input
+                  pInputText
+                  id="username"
+                  [style]="{
+                    width: '95%',
+                    height: '40px',
+                    'border-radius': '10px'
+                  }"
+                />
+                <label>รางวัลที่</label>
+              </div>
+              <div class="p-float-label" style="margin-top: 2rem">
+                <input
+                  pInputText
+                  id="username"
+                  [style]="{
+                    width: '95%',
+                    height: '40px',
+                    'border-radius': '10px'
+                  }"
+                />
+                <label>จำนวนรางวัล</label>
+              </div>
+            </div>
+            <div class="row" style="display: flex; justify-content: start">
+              <div
+                class="p-float-label"
+                style="margin-top: 2rem; margin-left: 0.5rem"
+              >
+                <input
+                  pInputText
+                  id="username"
+                  [style]="{
+                    width: '166%',
+                    height: '40px',
+                    'border-radius': '10px'
+                  }"
+                />
+                <label>รางวัล</label>
+              </div>
+            </div>
+          </ng-template>
+          <div class="flex justify-content-center">
+            <div style="margin-left: 3.5rem;">
+            <p-button label="เพิ่ม"  (click)="add()" icon="pi pi-plus"></p-button>
+            <p-button
+              label="เคลียร์"
+              (click)="clear()"
+              icon="pi pi-trash"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em' }"
+            ></p-button>
+          </div>
+          </div>
+        </p-card>
+      </div>
     </div>
   </div>
-  <div class="row" style="display: flex; justify-content: center">
-    <div class="p-float-label">
-      <input
-        pInputText
-        id="username"
-        [style]="{
-          width: '95%',
-          height: '40px',
-          'border-radius': '10px'
-        }"
-      />
-      <label>รางวัลที่</label>
-    </div>
-    <div class="p-float-label">
-      <input
-        pInputText
-        id="username"
-        [style]="{
-          width: '95%',
-          height: '40px',
-          'border-radius': '10px'
-        }"
-      />
-      <label>จำนวนรางวัล</label>
-    </div>
-  </div>
-  <div class="row" style="display: flex; justify-content: center">
-    <div class="p-float-label">
-      <input
-        pInputText
-        id="username"
-        [style]="{
-          width: '97.8%',
-          height: '40px',
-          'border-radius': '10px'
-        }"
-      />
-      <label>รางวัลที่</label>
-    </div>
-  </div>
-  <div class="row" style="display: flex; justify-content: end">
-    <div class="p-float-label" style="margin-left: 10rem">
-      <p-button label="เพิ่ม"></p-button>
-    </div>
-    <div class="p-float-label" style="margin-left: -4rem; margin-right: -3rem">
-      <p-button label="เคลียร์" severity="warning"></p-button>
+</div>
+
+<div class="card-container" *ngIf="showTable" >
+  <div class="grid">
+    <div class="field col-12 md:col-6">
+      <div class="card flex justify-content-center" style="margin-top: 1rem" >
+        <p-card [style]="{ width: '360px' }">
+          <p-table
+            dataKey="code"
+            [paginator]="true"
+            [rows]="5"
+            [selectionPageOnly]="true"
+           styleClass="p-datatable-gridlines p-datatable-sm"
+            [tableStyle]="{ 'min-width': '50rem' }"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width: 4rem">
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th style="min-width: 50px">ลำดับ</th>
+                <th style="min-width: 50px">วันที่</th>
+                <th style="min-width: 50px">เวลา</th>
+                <th style="min-width: 50px">จำนวน</th>
+                <th style="min-width: 100px">รางวัล</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body">
+              <tr>
+                <td>
+                  <p-tableCheckbox></p-tableCheckbox>
+                </td>
+                <!-- <td>{{ product.code }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.quantity }}</td> -->
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-card>
+      </div>
     </div>
   </div>
 </div>

@@ -35,7 +35,7 @@ import { MatButtonModule } from '@angular/material/button'; // นำเข้�
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-
+import { TableModule } from 'primeng/table';
 
 
 
@@ -127,12 +127,10 @@ import { ListRewardComponent } from './home-page/list-reward/list-reward.compone
     HttpClientModule,
     ProgressSpinnerModule,
     MatDialogModule,
+    TableModule,
   ],
 
-  providers: [
-    MessageService,
-    ConfirmationService,
-  ],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
