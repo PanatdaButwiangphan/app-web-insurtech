@@ -1,7 +1,6 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Carousel } from 'primeng/carousel';
 import { ActivatedRoute } from '@angular/router';
-
 
 @Component({
   selector: 'app-content',
@@ -14,23 +13,26 @@ export class ContentComponent {
       icon: 'pi pi-cloud',
       header: 'Cloud and Infrastructure Modernization',
       content:
-        'ยกระดับระบบโครงสร้างพื้นฐานทางด้าน IT ของธุรกิจ ผสานรวมระบบ Cloud และ On-Premises สู่ Hybrid Multi-Cloud',
-      pdfUrl: 'https://www.africau.edu/images/default/sample.pdf', // URL ของ PDF สำหรับ Solution 1
+        'Enhance security for Cloud, Data Center, devices and users across the organization. With a full range of solutions and services from Yip In Tsoi.',
+      pdfUrl: 'https://www.africau.edu/images/default/sample.pdf',
     },
     {
-      icon: 'pi pi-cloud',
-      header: 'Solution2',
-      content: 'Detail2',
+      icon: 'pi pi-lock',
+      header: 'Cyber Security',
+      content:
+        'Enhance security for Cloud, Data Center, devices and users across the organization. With a full range of solutions and services from Yip In Tsoi.',
     },
     {
-      icon: 'pi pi-cloud',
-      header: 'Solution3',
-      content: 'Detail3',
+      icon: 'pi pi-briefcase',
+      header: 'Digital Business Solutions',
+      content:
+        'Adjust the business to Digital Business, moving forward with the Digital Transformation strategy Confidently with Yip In Tsoi',
     },
     {
-      icon: 'pi pi-cloud',
-      header: 'Solution4',
-      content: 'Detail4',
+      icon: 'pi pi-database',
+      header: 'Data & Analytic Solutions',
+      content:
+        'Turn business data into value laying the foundation for data management to create new innovations for sustainable business growth',
     },
   ];
 
