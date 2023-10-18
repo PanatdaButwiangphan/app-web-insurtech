@@ -1,23 +1,24 @@
-<h2 style="color: white; text-align: center; margin-top: 10px">
+<h2 style="color: white; text-align: center; margin-top: 2rem; font-size: 24px">
   Product & Solution
 </h2>
 <div class="container">
   <div class="grid">
     <ng-container *ngFor="let item of solutions">
-      <div class="field col-12 md:col-6">
-        <p-card [header]="item.header">
-          <p>
+      <div class="card col-12 md:col-6 m-0 py-0">
+        <p-card>
+          <div class="header">
+            <i
+              [class]="item.icon"
+              style="font-size: 3.5rem;"
+            ></i>
+            <span class="custom-header">{{ item.header }}</span>
+          </div>
+          <p style="margin-top: 1rem;">
             {{ item.content }}
           </p>
           <ng-template pTemplate="footer">
             <a [href]="item.pdfUrl" target="_blank" rel="noopener noreferrer">
-              <button
-                pButton
-                pRipple
-                label="View"
-                icon="pi pi-search"
-                class="bt-view"
-              ></button>
+              <button pButton pRipple label="View" class="bt-view"></button>
             </a>
           </ng-template>
         </p-card>
@@ -26,7 +27,7 @@
   </div>
 </div>
 
-<div class="card center-button" *ngIf="!isUserPage">
+<div class="card center-button" style="margin-top: rem;" *ngIf="!isUserPage">
   <p-button
     routerLink="/register"
     label="Register"
