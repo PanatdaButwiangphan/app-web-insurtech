@@ -1,4 +1,4 @@
-.card {
+/* .card {
   width: 340px;
   height: 500px auto;
   border-radius: 15px;
@@ -10,8 +10,8 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-}
-.p-float-label {
+} */
+/* .p-float-label {
   flex: 1;
   margin-left: 0.5rem;
   margin-top: 0.7rem;
@@ -33,4 +33,9 @@
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+} */
+
+.card-container {
+    display: flex;
+    justify-content: center;
 }
