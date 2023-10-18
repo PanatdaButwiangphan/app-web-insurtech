@@ -1,32 +1,31 @@
-<h2 style="color: white; text-align: center; margin-top: 10px;">Product & Solution</h2>
-
-<div class="card flex justify-content-center">
-  <p-accordion [multiple]="true" [activeIndex]="[0]">
-    <p-accordionTab
-      *ngFor="let solution of solutions"
-      [header]="solution.header"
-    >
-      <p>
-        {{ solution.content }}
-      </p>
-      <a [href]="solution.pdfUrl" target="_blank">
-        <p-button
-          icon="pi pi-search"
-          styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
-          label="View"
-        ></p-button>
-      </a>
-      <a [href]="solution.pdfUrl" download>
-        <p-button
-          icon="pi pi-download"
-          styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
-          label="Download"
-        ></p-button>
-</a>  
-    </p-accordionTab>
-  </p-accordion>
-  
+<h2 style="color: white; text-align: center; margin-top: 10px">
+  Product & Solution
+</h2>
+<div class="container">
+  <div class="grid">
+    <ng-container *ngFor="let item of solutions">
+      <div class="field col-12 md:col-6">
+        <p-card [header]="item.header">
+          <p>
+            {{ item.content }}
+          </p>
+          <ng-template pTemplate="footer">
+            <a [href]="item.pdfUrl" target="_blank" rel="noopener noreferrer">
+              <button
+                pButton
+                pRipple
+                label="View"
+                icon="pi pi-search"
+                class="bt-view"
+              ></button>
+            </a>
+          </ng-template>
+        </p-card>
+      </div>
+    </ng-container>
+  </div>
 </div>
+
 <div class="card center-button" *ngIf="!isUserPage">
   <p-button
     routerLink="/register"
@@ -43,7 +42,7 @@
 
 <div class="card">
   <p-carousel
-    [style]="{'margin-top':'2em'}"
+    [style]="{ 'margin-top': '2em' }"
     [value]="images"
     [numVisible]="1"
     [numScroll]="1"
