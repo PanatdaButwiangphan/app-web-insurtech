@@ -9,3 +9,8 @@
   background: linear-gradient(0deg, #2C4387 0%, #2C4387 100%), #1D8CF8 !important;
 }
 */
+:host button {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}

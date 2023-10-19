@@ -1,4 +1,4 @@
-import { Component,OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem, ConfirmationService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { UserRegisterService } from 'src/app/Service/User/user-register.service';
@@ -10,18 +10,18 @@ import { UserRegisterService } from 'src/app/Service/User/user-register.service'
 })
 export class NavbarCompletComponent {
   items: MenuItem[];
-  username: any;
+  username: string = '';
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private userRegisterService: UserRegisterService
-    ) {
+  ) {
     this.items = [
       {
         label: 'ChangPassword',
         icon: 'pi pi-key',
         routerLink: ['/change-password'],
       },
-
       {
         label: 'Contact',
         icon: 'pi pi-send',
@@ -32,8 +32,8 @@ export class NavbarCompletComponent {
     ];
   }
   ngOnInit() {
-// ดึงค่า username จาก UserRegisterService
-this.username = this.userRegisterService.getUsername();                
+    // ดึงค่า username จาก UserRegisterService
+    this.username = this.userRegisterService.getUsername()
   }
   // getUsername(){
   //   this.userRegisterService.getUsername().subscribe({
