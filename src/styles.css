@@ -2,6 +2,7 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200&display=swap');
 
 body {
   width: auto;
@@ -154,5 +155,14 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'IBM Plex Sans Thai', sans-serif;
 }
+
+/* h1, h2, p, a, h4 {
+  font-family: 'IBM Plex Sans Thai', sans-serif !important;;
+}
+
+.mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography    {    
+    font-family: 'IBM Plex Sans Thai', sans-serif !important; 
+    
+} */

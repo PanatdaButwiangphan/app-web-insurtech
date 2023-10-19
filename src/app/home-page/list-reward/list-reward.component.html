@@ -1,42 +1,55 @@
 <app-navbar-complet></app-navbar-complet>
 
-<div class="title">
+<div class="btmenu" *ngIf="showMenuButton">
+  <p-button
+    icon="pi pi-microsoft"
+    styleClass="p-button-rounded p-button-secondary"
+    routerLink="/menu"
+  ></p-button>
+</div>
+
+<div class="title" style="margin-bottom: 0;">
   <div class="head">ประกาศรายชื่อผู้โชคดี</div>
 </div>
 
-<div class="popup">
-  <ng-container>
-    <div class="title_">
-      <button class="button" routerLink="/reward">
-        <div class="text">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</div>
-      </button>
-    </div>
-     <div class="title_">
-      <button class="button" routerLink="/reward">
-        <div class="text">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</div>
-      </button>
-    </div>
-    <div class="title_">
-      <button class="button" routerLink="/reward">
-        <div class="text">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</div>
-      </button>
-    </div>
-  </ng-container>
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center">
+    <ng-container>
+      <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
+        <p-card>
+          <div class="grid">
+            <div class="row col-12">
+              <div
+                class="card_"
+                routerLink="/reward"
+                [queryParams]="{ showMenuButton: showMenuButton }"
+              >
+                <div class="text">วันที่ 25/08/2566 เวลา 11:00 น.</div>
+              </div>
+            </div>
+
+            <div class="row col-12">
+              <div
+                class="card_"
+                routerLink="/reward"
+                [queryParams]="{ showMenuButton: showMenuButton }"
+              >
+                <div class="text">วันที่ 25/08/2566 เวลา 11:00 น.</div>
+              </div>
+            </div>
+
+            <div class="row col-12">
+              <div
+                class="card_"
+                routerLink="/reward"
+                [queryParams]="{ showMenuButton: showMenuButton }"
+              >
+                <div class="text">วันที่ 25/08/2566 เวลา 11:00 น.</div>
+              </div>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </ng-container>
+  </div>
 </div>
-
-
-<!-- <div class="popup">
-  <ng-container *ngIf="results.length > 0; else noResults">
-    <div class="title_">
-      <button class="button" *ngFor="let result of results" (click)="showRewardDetail(result.date, result.time)">
-        <div class="text">ผลรางวัล วันที่ {{ result.date }} เวลา {{ result.time }}</div>
-      </button>
-    </div>
-  </ng-container>
-  <ng-template #noResults>
-    <div class="title_">
-      <div class="text"><h4 style="color: white;">ประกาศผลรางวัลเร็วๆนี้</h4></div>
-    </div>
-  </ng-template>
-</div> -->
-

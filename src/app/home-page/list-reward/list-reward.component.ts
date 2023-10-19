@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-reward',
@@ -9,8 +9,16 @@ import { Router } from '@angular/router';
 })
 export class ListRewardComponent implements OnInit {
   results: any[] = [];
-
-  constructor(private http: HttpClient, private router: Router) {}
+  showMenuButton: boolean = false;
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.route.queryParams.subscribe((params) => {
+      this.showMenuButton = params['showMenuButton'] === 'true';
+    });
+  }
 
   ngOnInit(): void {
     this.http.get<any>('API_ENDPOINT').subscribe((data) => {

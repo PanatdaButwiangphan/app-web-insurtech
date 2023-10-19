@@ -4,68 +4,50 @@
   font-size: 20px;
 }
 
-.popup {
-  width: 335px;
-  height: 500px auto;
-  background: linear-gradient(180deg, #292AA1 0%, #4886D4 81%);
-  border-radius: 32px;
-  align-items: center;
-  justify-content: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.button{
-    margin-bottom: 15px;
-    margin-top: -20px;
-}
-
-.btclose {
-    max-width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
-    justify-content: center;
-}
-
-.title_ {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 30px;
+  .text{
+    text-align: center;
     display: flex;
+    color: rgb(0, 0, 0);
     align-items: center;
-    justify-content: center;
-    color: BDD4F1;
-  }
-
-  .title_name {
-    width: 100%;
-    margin-top: -36px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .button{
+  } 
+  .card_{
     background: #9DBADF;
     border-radius: 9px;
-    width: 95%;
-    height: 45px;
-    margin-top: -15px;
-    margin-bottom: -10px;
+    width: 100%;
+    height: 50px;    
     display: flex;
     justify-content: center;
+    padding: 0 1rem;
    }
 
-  .text{
-     text-align: center;
-     justify-content: center;
-     margin-top: 12px;
-     color: rgb(0, 0, 0);
+
+::ng-deep .p-card{
+  color: white;
+  margin: 1rem;
+  background: linear-gradient(180deg, #292AA1 0%, #4886D4 81%);
+  border-radius: 32px;
+}
+
+::ng-deep .p-card .p-card-body {
+    padding: 0 1 rem;
+}
+
+::ng-deep .p-card .p-card-content {
+    padding: 2rem 0;
+}
+/* Media query สำหรับขนาดหน้าจอที่เล็ก */
+@media screen and (max-width: 600px) {
+  .card {
+    max-width: 100%; /* ปรับขนาดตามขนาดหน้าจอที่เล็ก */
   }
+}
 
-
+/* ปรับสไตล์สำหรับหน้าจอโทรศัพท์ */
+@media screen and (max-width: 767px) {
+  .p-carousel img  {
+    overflow-x: auto; /* เพิ่มการเลื่อนในแนวนอนเมื่ออยู่ในโทรศัพท์ */
+    white-space: nowrap; /* ไม่ให้ข้อมูลขึ้นบรรทัดใหม่ */
+    width: 100%; /* ทำให้รูปภาพเต็มกว้าง */
+    height: auto; /* รักษาสัดส่วน */
+  }
+}

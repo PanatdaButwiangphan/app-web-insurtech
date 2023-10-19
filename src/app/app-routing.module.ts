@@ -12,6 +12,7 @@ import { RewardSettingComponent } from './admin/reward-setting/reward-setting.co
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
+import { ListRewardComponent } from './home-page/list-reward/list-reward.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'sign-in', component: SigninComponent },
   { path: 'reward', component: RewardComponent },
+  { path: 'list-reward', component: ListRewardComponent },
 ];
 
 @NgModule({

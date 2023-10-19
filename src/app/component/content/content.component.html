@@ -53,7 +53,7 @@
     "true">
     <ng-template pTemplate="header"> </ng-template>
     <ng-template let-image pTemplate="item">
-      <img routerLink="/reward" [src]="image" alt="Image" style="width: 100%" />
+      <img routerLink="/list-reward" [queryParams]="{ showMenuButton: false }" [src]="image" alt="Image" style="width: 100%" />
     </ng-template>
   </p-carousel>
 </div>
