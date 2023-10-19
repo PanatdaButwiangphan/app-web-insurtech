@@ -12,130 +12,182 @@
   <h2>Reward Setting</h2>
 </div>
 
-
-<div class="card-container">
-  <div class="grid">
-    <div class="field col-12 md:col-6">
-      <div class="card flex justify-content-center">
-        <p-card [style]="{ width: '360px' }">
+<div class="container">
+  <div
+    class="grid"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <ng-container>
+      <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
+        <p-card>
           <ng-template pTemplate="header">
             <div class="row" style="display: flex; justify-content: center">
-              <div
-                class="p-float-label"
-                style="margin-top: 2rem; margin-left: 0.5rem"
-              >
+              <div class="p-float-label col-6" style="margin-top: 2rem">
+                  <span style="padding: 0.5rem;">วันที่จับรางวัล</span>
                 <input
                   pInputText
                   id="username"
+                  placeholder="วว/ดด/ปป"
                   [style]="{
-                    width: '95%',
-                    height: '40px',
-                    'border-radius': '10px'
+                    width: '100%',
+                    'border-radius': '5px'
                   }"
+                  style="margin-top: 0.5rem"
                 />
-                <label>วันที่จับรางวัล</label>
               </div>
-              <div class="p-float-label" style="margin-top: 2rem">
+              <div class="p-float-label col-6" style="margin-top: 2rem">
+                  <span style="padding: 0.5rem;">เวลาที่จับรางวัล</span>
                 <input
                   pInputText
                   id="username"
+                  placeholder="00:00"
                   [style]="{
-                    width: '95%',
-                    height: '40px',
-                    'border-radius': '10px'
+                    width: '100%',
+                    'border-radius': '5px'
                   }"
+                  style="margin-top: 0.5rem"
                 />
-                <label>เวลาที่จับรางวัล</label>
               </div>
             </div>
             <div class="row" style="display: flex; justify-content: center">
-              <div
-                class="p-float-label"
-                style="margin-top: 2rem; margin-left: 0.5rem"
-              >
+              <div class="p-float-label col-6">
+                  <span style="padding: 0.5rem;">รางวัลที่</span>
                 <input
                   pInputText
                   id="username"
+                  placeholder="รางวัลที่..."
                   [style]="{
-                    width: '95%',
-                    height: '40px',
-                    'border-radius': '10px'
+                    width: '100%',
+                    'border-radius': '5px'
                   }"
+                  style="margin-top: 0.5rem"
                 />
-                <label>รางวัลที่</label>
               </div>
-              <div class="p-float-label" style="margin-top: 2rem">
+              <div class="p-float-label col-6">
+                <span style="padding: 0.5rem;">จำนวนรางวัล</span>
                 <input
                   pInputText
                   id="username"
+                  placeholder="จำนวนรางวัล..."
                   [style]="{
-                    width: '95%',
-                    height: '40px',
-                    'border-radius': '10px'
+                    width: '100%',
+                    'border-radius': '5px'
                   }"
+                  style="margin-top: 0.5rem"
                 />
-                <label>จำนวนรางวัล</label>
               </div>
             </div>
             <div class="row" style="display: flex; justify-content: start">
-              <div
-                class="p-float-label"
-                style="margin-top: 2rem; margin-left: 0.5rem"
-              >
+              <div class="p-float-label col-12">
+                  <span style="padding: 0.5rem;">รางวัล</span>
                 <input
                   pInputText
                   id="username"
+                  placeholder="รางวัล..."
                   [style]="{
-                    width: '166%',
-                    height: '40px',
-                    'border-radius': '10px'
+                    width: '100%',
+                    'border-radius': '5px'
                   }"
+                  style="margin-top: 0.5rem"
                 />
-                <label>รางวัล</label>
               </div>
             </div>
           </ng-template>
-          <div class="flex justify-content-center">
-            <div style="margin-left: 3.5rem;">
-            <p-button label="เพิ่ม"  (click)="add()" icon="pi pi-plus"></p-button>
-            <p-button
-              label="เคลียร์"
-              (click)="clear()"
-              icon="pi pi-trash"
-              styleClass="p-button-secondary"
-              [style]="{ 'margin-left': '.5em' }"
-            ></p-button>
-          </div>
+          <div class="row flex justify-content-center flex-wrap">
+            <div class="col-12 flex align-items-center justify-content-center">
+              <p-button
+                label="เพิ่ม"
+                (click)="add()"
+                icon="pi pi-plus"
+                [style]="{
+                  width: '100px',
+                  height: '40px',
+                  display: 'flex',
+                  'align-items': 'center',
+                  'justify-content': 'center'
+                }"
+              ></p-button>
+              <p-button
+                label="เคลียร์"
+                (click)="clear()"
+                icon="pi pi-refresh"
+                styleClass="p-button-secondary"
+                [style]="{
+                  'margin-left': '.5em',
+                  width: '100px',
+                  height: '40px',
+                  display: 'flex',
+                  'align-items': 'center',
+                  'justify-content': 'center'
+                }"
+              ></p-button>
+            </div>
           </div>
         </p-card>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>
 
-<div class="card-container" *ngIf="showTable" >
-  <div class="grid">
-    <div class="field col-12 md:col-6">
-      <div class="card flex justify-content-center" style="margin-top: 1rem" >
-        <p-card [style]="{ width: '360px' }">
+<div class="container" *ngIf="showTable">
+  <div
+    class="grid"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <ng-container>
+      <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
+        <p-card>
+          <div class="row flex justify-content-center flex-wrap">
+            <div
+              class="col-12 flex align-items-center justify-content-end mb-2 -mt-4"
+            >
+              <p-button
+                label="บันทึก"
+                icon="pi pi-save"
+                styleClass="p-button-success"
+                [style]="{
+                  width: '100px',
+                  height: '40px',
+                  display: 'flex',
+                  'align-items': 'center',
+                  'justify-content': 'center'
+                }"
+              ></p-button>
+              <p-button
+                label="ลบ"
+                icon="pi pi-trash"
+                styleClass="p-button-danger"
+                [style]="{
+                  'margin-left': '.5em',
+                  width: '100px',
+                  height: '40px',
+                  display: 'flex',
+                  'align-items': 'center',
+                  'justify-content': 'center'
+                }"
+              ></p-button>
+            </div>
+          </div>
+
           <p-table
             dataKey="code"
             [paginator]="true"
             [rows]="5"
             [selectionPageOnly]="true"
-           styleClass="p-datatable-gridlines p-datatable-sm"
-            [tableStyle]="{ 'min-width': '50rem' }"
+            styleClass="p-datatable-gridlines p-datatable-sm"
           >
             <ng-template pTemplate="header">
               <tr>
                 <th style="width: 4rem">
-                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                  <p-tableHeaderCheckbox
+                    style="min-width: 50px; text-align: center"
+                  ></p-tableHeaderCheckbox>
                 </th>
-                <th style="min-width: 50px">ลำดับ</th>
-                <th style="min-width: 50px">วันที่</th>
-                <th style="min-width: 50px">เวลา</th>
-                <th style="min-width: 50px">จำนวน</th>
-                <th style="min-width: 100px">รางวัล</th>
+                <th style="min-width: 50px; text-align: center">ลำดับ</th>
+                <th style="min-width: 50px; text-align: center">วันที่</th>
+                <th style="min-width: 50px; text-align: center">เวลา</th>
+                <th style="min-width: 50px; text-align: center">จำนวน</th>
+                <th style="min-width: 100px; text-align: center">รางวัล</th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body">
@@ -156,6 +208,6 @@
           </p-table>
         </p-card>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>

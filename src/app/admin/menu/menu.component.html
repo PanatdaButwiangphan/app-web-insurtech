@@ -14,8 +14,9 @@
      <button class="button" routerLink="/lucky-draw" >Lucky Draw</button>
   </div>
  <div>
-      <button class="button" routerLink="/list-reward" >ประกาศรายชื่อ</button>
- </div>
+  <button class="button" [routerLink]="['/reward']" [queryParams]="{ showMenuButton: true }">ประกาศรายชื่อ</button>
+</div>
+
   <div>
       <button class="button" >Board</button>
    </div>
