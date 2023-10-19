@@ -39,3 +39,93 @@
     display: flex;
     justify-content: center;
 }
+
+.centered-text {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    color: rgb(255, 255, 255); /* สีของข้อความเป็นสีขาว */
+
+  }
+  /* CSS เพื่อจัดให้ปุ่มอยู่ตรงกลาง */
+  .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%; /* ความสูงเท่ากับความสูงของ div.card */
+
+  }
+  /* เพิ่มสไตล์ที่ทำให้ Carousel เป็น responsive */
+
+
+/* Media query สำหรับขนาดหน้าจอที่เล็ก */
+@media screen and (max-width: 600px) {
+  .card {
+    max-width: 100%; /* ปรับขนาดตามขนาดหน้าจอที่เล็ก */
+  }
+}
+
+
+  ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link{
+    background: linear-gradient(0deg, rgb(119, 168, 233) 0%, rgb(44, 67, 135) 100%), rgb(29, 140, 248) !important;
+    color: white !important;
+
+  }
+  ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+    background: linear-gradient(0deg, rgb(192, 207, 252) 0%, rgb(247, 247, 247) 100%), rgb(29, 140, 248) !important;
+    color: rgb(0, 0, 0) !important;
+  }
+
+  ::ng-deep .p-accordion .p-accordion-content{
+
+    background: linear-gradient(0deg, rgb(122, 145, 219) 0%, rgb(247, 247, 247) 100%), rgb(198, 226, 255) !important;
+color: whit;
+  }
+  ::ng-deep .p-button.p-button-info.p-button-text{
+    background-color: #d0d9ff !important;
+
+  }
+/* :host .container{
+  padding: 0 2rem;
+  margin: 3rem 0;
+} */
+::ng-deep .p-card{
+  color: white;
+  margin: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #247CF7 0%, rgba(170, 144, 243, 0.12) 100%);
+
+}
+
+.custom-header {
+  color: #FFF;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: 'Inter', sans-serif;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.text {
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* ปรับสไตล์สำหรับหน้าจอโทรศัพท์ */
+@media screen and (max-width: 767px) {
+  .p-carousel img  {
+    overflow-x: auto; /* เพิ่มการเลื่อนในแนวนอนเมื่ออยู่ในโทรศัพท์ */
+    white-space: nowrap; /* ไม่ให้ข้อมูลขึ้นบรรทัดใหม่ */
+    width: 100%; /* ทำให้รูปภาพเต็มกว้าง */
+    height: auto; /* รักษาสัดส่วน */
+  }
+
+
+}
+
+
+
+

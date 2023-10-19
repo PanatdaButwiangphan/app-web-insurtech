@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 interface Country {
   name: string,
@@ -10,8 +11,13 @@ interface Country {
   styleUrls: ['./reward.component.css'],
 })
 export class RewardComponent {
+  showMenuButton: boolean = false;
 
-
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe((params) => {
+      this.showMenuButton = params['showMenuButton'] === 'true';
+    });
+  }
   // date: Date | undefined;
   // items!: string[][];
 
