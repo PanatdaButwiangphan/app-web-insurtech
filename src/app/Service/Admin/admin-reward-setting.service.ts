@@ -9,12 +9,12 @@ export class adminRewardSettingService {
 
   addReward(reward: any) {
     return this.http
-      .post<any>('http://94.74.114.51:7088/insurtech/api/v1/reward', reward)
+      .post<any>('http://94.74.114.51:7080/insurtech/api/v1/reward', reward)
       .pipe((res: any) => res);
   }
   showReward() {
     return this.http
-      .get<any>('http://94.74.114.51:7088/insurtech/api/v1/rewards')
+      .get<any>('http://94.74.114.51:7080/insurtech/api/v1/rewards')
       .pipe((res: any) => res);
   }
 }
