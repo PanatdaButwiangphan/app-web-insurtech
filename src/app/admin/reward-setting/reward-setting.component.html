@@ -1,28 +1,26 @@
 <app-navbar-complet></app-navbar-complet>
 
-<div class="btmenu px-3">
+<!-- <div class="btmenu px-3">
   <p-button
     icon="pi pi-microsoft"
     styleClass="p-button-rounded p-button-secondary"
     routerLink="/menu"
   ></p-button>
-</div>
+</div> -->
 
 <div class="title">
   <h2>Reward Setting</h2>
 </div>
 
 <div class="container">
-  <div
-    style="display: flex; justify-content: center; align-items: center"
-  >
+  <div style="display: flex; justify-content: center; align-items: center">
     <ng-container>
       <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
         <p-card>
           <ng-template pTemplate="header">
             <div class="row" style="display: flex; justify-content: center">
-              <div class="p-float-label col-6" style="margin-top: 2rem">
-                  <span style="padding: 0.5rem;">วันที่จับรางวัล</span>
+              <div class="p-float-label col-6" style="margin-top: 1rem">
+                <span style="padding: 0.5rem">วันที่จับรางวัล</span>
                 <input
                   pInputText
                   id="username"
@@ -35,13 +33,13 @@
                   style="margin-top: 0.5rem"
                 />
               </div>
-              <div class="p-float-label col-6" style="margin-top: 2rem">
-                  <span style="padding: 0.5rem;">เวลาที่จับรางวัล</span>
+              <div class="p-float-label col-6" style="margin-top: 1rem">
+                <span style="padding: 0.5rem">เวลาที่จับรางวัล</span>
                 <input
                   pInputText
                   id="username"
                   placeholder="00:00"
-                   [(ngModel)]="time"
+                  [(ngModel)]="time"
                   [style]="{
                     width: '100%',
                     'border-radius': '5px'
@@ -52,12 +50,12 @@
             </div>
             <div class="row" style="display: flex; justify-content: center">
               <div class="p-float-label col-6">
-                  <span style="padding: 0.5rem;">รางวัลที่</span>
+                <span style="padding: 0.5rem">รางวัลที่</span>
                 <input
                   pInputText
                   id="username"
                   placeholder="รางวัลที่..."
-                   [(ngModel)]="rewardno"
+                  [(ngModel)]="rewardno"
                   [style]="{
                     width: '100%',
                     'border-radius': '5px'
@@ -66,12 +64,12 @@
                 />
               </div>
               <div class="p-float-label col-6">
-                <span style="padding: 0.5rem;">จำนวนรางวัล</span>
+                <span style="padding: 0.5rem">จำนวนรางวัล</span>
                 <input
                   pInputText
                   id="username"
                   placeholder="จำนวนรางวัล..."
-                   [(ngModel)]="rewardamount"
+                  [(ngModel)]="rewardamount"
                   [style]="{
                     width: '100%',
                     'border-radius': '5px'
@@ -82,12 +80,12 @@
             </div>
             <div class="row" style="display: flex; justify-content: start">
               <div class="p-float-label col-12">
-                  <span style="padding: 0.5rem;">รางวัล</span>
+                <span style="padding: 0.5rem">รางวัล</span>
                 <input
                   pInputText
                   id="username"
                   placeholder="รางวัล..."
-                   [(ngModel)]="reward"
+                  [(ngModel)]="reward"
                   [style]="{
                     width: '100%',
                     'border-radius': '5px'
@@ -98,7 +96,10 @@
             </div>
           </ng-template>
           <div class="row flex justify-content-center flex-wrap">
-            <div class="col-12 flex align-items-center justify-content-center">
+            <div
+              class="col-12 flex align-items-center justify-content-center"
+              style="margin-top: -2rem; margin-bottom: -1rem"
+            >
               <p-button
                 label="เพิ่ม"
                 (click)="add()"
@@ -134,10 +135,7 @@
 </div>
 
 <div class="container" *ngIf="showTable">
-  <div
-
-    style="display: flex; justify-content: center; align-items: center"
-  >
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: -1rem;">
     <ng-container>
       <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
         <p-card>

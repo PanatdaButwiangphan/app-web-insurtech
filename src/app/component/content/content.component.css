@@ -62,7 +62,7 @@ color: whit;
   margin: 1rem;
   border-radius: 10px;
   background: linear-gradient(180deg, #247CF7 0%, rgba(170, 144, 243, 0.12) 100%);
-  
+
 }
 
 
@@ -99,14 +99,23 @@ color: whit;
     width: 100%; /* ทำให้รูปภาพเต็มกว้าง */
     height: auto; /* รักษาสัดส่วน */
   }
-  
+
   /* ปรับสไตล์ของ p-carousel ให้เต็มหน้าจอ */
   .p-carousel {
     width: 100vw;
   }
-  
+
   /* ปรับสไตล์ของรูปภาพใน p-carousel */
- 
+
+}
+
+::ng-deep .bt-regis {
+  border: 0;
+  border-radius: 6px;
+  border: 1px solid #4c44e4;
+  background: linear-gradient(90deg, #332bcc 0%, #7b42c5 100%);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
 

@@ -35,22 +35,23 @@
 </div>-->
 <div class="card">
   <p-menubar>
-    <ng-template pTemplate="start">
+    <ng-template pTemplate="start"  >
       <div class="text-center">
         <div
-          style="display: flex; justify-content: center; align-items: center"
+          style="display: flex; justify-content: center; align-items: center; "
         >
-          <img src="assets/images/logo.png" />
+          <img src="assets/images/logo.png" style="max-width: 1.5rem; max-height: 1.5rem;"/>
+
         </div>
 
-        <p style="color: white; font-size: 12px; margin-bottom: 0px">
+        <p style="color: white; font-size: 9px; margin-bottom: 0px">
           YIP IN TSOI
         </p>
       </div>
     </ng-template>
     <ng-template pTemplate="end">
-      <button pButton pRipple label="Register" class="bt-regis ml-2" (click)="regis()"></button>
-      <button pButton pRipple label="Sign in" class="bt-sing-in" (click)="login()"></button>
+      <button pButton pRipple label="Register" class="bt-regis ml-2 p-button-sm" (click)="regis()"></button>
+      <button pButton pRipple label="Sign in" class="bt-sing-in p-button-sm" (click)="login()"></button>
     </ng-template>
   </p-menubar>
 </div>

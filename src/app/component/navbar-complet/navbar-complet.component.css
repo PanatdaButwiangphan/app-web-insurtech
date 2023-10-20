@@ -14,3 +14,7 @@
   border: 0 !important;
   box-shadow: none !important;
 }
+
+::ng-deep .p-menubar {
+ max-height: 4rem;
+}

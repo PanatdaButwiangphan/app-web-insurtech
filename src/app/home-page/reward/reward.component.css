@@ -15,3 +15,14 @@
   margin-bottom: 7px;
   font-size: 20px;
 }
+
+:host .title {
+ width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+

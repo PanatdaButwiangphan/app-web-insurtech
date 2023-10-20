@@ -1,29 +1,29 @@
 <app-navbar-complet></app-navbar-complet>
 
-
-    <div class="title">
-      <h2>Menu</h2>
-    </div>
-
-
-<div class="buttons">
-  <div>
-  <button class="button" routerLink="/reward-setting" >Reward Setting</button>
-  </div>
-  <div>
-     <button class="button" routerLink="/lucky-draw" >Lucky Draw</button>
-  </div>
- <div>
-  <button class="button" [routerLink]="['/list-reward']" [queryParams]="{ showMenuButton: true }">ประกาศรายชื่อ</button>
+<div class="title">
+  <h2>Menu</h2>
 </div>
 
-  <div>
-      <button class="button" >Board</button>
-   </div>
-  <div>
-    <button class="button"  routerLink="/reset-password">Reset Password</button>
+<div class="buttons">
+  <div style="display: flex; justify-content: space-evenly">
+    <button class="button" routerLink="/reward-setting">ตั้งค่ารางวัล</button>
+    <button class="button" routerLink="/lucky-draw">สุ่มรางวัล</button>
   </div>
+  <div style="display: flex; justify-content: space-evenly">
+    <button
+      class="button"
+      [routerLink]="['/list-reward']"
+      [queryParams]="{ showMenuButton: true }"
+    >
+      ประกาศรายชื่อ
+    </button>
+    <button class="button" routerLink="/reset-password">
+      เปลี่ยนรหัสผ่าน
+    </button>
+  </div>
+  <!-- <div style="display: flex; justify-content: space-evenly">
+    <button class="button">Board</button>
+  </div> -->
 </div>
 
 <!-- <div class="footer"></div> -->
-

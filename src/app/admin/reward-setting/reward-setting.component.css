@@ -3,6 +3,16 @@
     justify-content: center;
 }
 
+:host .title {
+ width: 100%;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 .centered-text {
     text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
     color: rgb(255, 255, 255); /* สีของข้อความเป็นสีขาว */
