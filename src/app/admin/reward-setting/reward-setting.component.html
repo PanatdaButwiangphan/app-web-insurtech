@@ -24,7 +24,7 @@
                 <input
                   pInputText
                   id="username"
-                  placeholder="วว/ดด/ปป"
+                  placeholder="วว-ดด-ปป"
                   [(ngModel)]="date"
                   [style]="{
                     width: '100%',
@@ -167,12 +167,21 @@
                   'align-items': 'center',
                   'justify-content': 'center'
                 }"
+                (click)="delete()"
               ></p-button>
             </div>
           </div>
 
           <p-table
-            dataKey="code"
+            [value]="table"
+            [(selection)]="selectedData"
+            responsiveLayout="scroll"
+            [resizableColumns]="true"
+            [globalFilterFields]="['modelNo']"
+            [paginator]="true"
+            [showCurrentPageReport]="true"
+            [autoLayout]="true"
+            dataKey="rewardId"
             [paginator]="true"
             [rows]="5"
             [selectionPageOnly]="true"
@@ -180,10 +189,8 @@
           >
             <ng-template pTemplate="header">
               <tr>
-                <th style="width: 4rem">
-                  <p-tableHeaderCheckbox
-                    style="min-width: 50px; text-align: center"
-                  ></p-tableHeaderCheckbox>
+                <th style="width: 4rem" class="text-center">
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
                 <th style="min-width: 50px; text-align: center">ลำดับ</th>
                 <th style="min-width: 50px; text-align: center">วันที่</th>
@@ -192,19 +199,18 @@
                 <th style="min-width: 100px; text-align: center">รางวัล</th>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body">
+            <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
               <tr>
-                <td>
-                  <p-tableCheckbox></p-tableCheckbox>
+                <td class="text-center">
+                  <p-tableCheckbox [value]="data"></p-tableCheckbox>
                 </td>
-                <!-- <td>{{ product.code }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.quantity }}</td> -->
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
+                <td class="text-center">
+                  {{ rowIndex + 1 }}
+                </td>
+                <td class="text-center">{{ data.date }}</td>
+                <td class="text-center">{{ data.time }}</td>
+                <td class="text-right">{{ data.rewardQuantity }}</td>
+                <td>{{ data.rewardTitle }}</td>
               </tr>
             </ng-template>
           </p-table>
