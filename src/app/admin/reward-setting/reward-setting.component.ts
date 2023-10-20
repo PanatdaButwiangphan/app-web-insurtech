@@ -11,7 +11,7 @@ export class RewardSettingComponent {
   date: string = '';
   time: string = '';
   rewardno: string = '';
-  rewardamount: string = '';
+  rewardamount?: number;
   reward: string = '';
   table: any[] = [];
   selectedData!: any[];
@@ -30,7 +30,7 @@ export class RewardSettingComponent {
       this.date != '' &&
       this.time != '' &&
       this.reward != '' &&
-      this.rewardamount != ''
+      this.rewardamount != 0
     ) {
       const rewardSetting = {
         rewardDate: this.date,
@@ -47,7 +47,14 @@ export class RewardSettingComponent {
         }
       );
     }
-
+    this.adminRewardService.showReward().subscribe(
+      (response) => {
+        this.table = response as any[];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
     this.showTable = true;
   }
   clear() {
@@ -55,7 +62,7 @@ export class RewardSettingComponent {
     this.date = '';
     this.time = '';
     this.rewardno = '';
-    this.rewardamount = '';
+    this.rewardamount = 0;
     this.reward = '';
   }
   delete() {
