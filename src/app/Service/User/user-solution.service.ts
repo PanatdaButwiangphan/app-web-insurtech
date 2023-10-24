@@ -12,7 +12,7 @@ export class UserSolutionService{
 
     getListSolution(){
         return this.http
-          .get<any>('http://114.119.173.133:8080/insurtech/api/v1/solutionProducts',{
+          .get<any>('http://94.74.114.51:7080/insurtech/api/v1/solutionProducts',{
               
           })
           .pipe((res)=>{

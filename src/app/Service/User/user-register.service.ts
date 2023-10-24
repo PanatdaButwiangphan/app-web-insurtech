@@ -19,7 +19,7 @@ export class UserRegisterService{
     solution : string[]
       ){
     return this.http
-    .post<any>('http://114.119.173.133:8080/insurtech/api/v1/userRegister',{
+    .post<any>('http://94.74.114.51:7080/insurtech/api/v1/userRegister',{
       username: firsname,
         email: email,
         phoneNo: phoneNo,
@@ -33,7 +33,7 @@ export class UserRegisterService{
 
   getSolutionProductTitles(){
     return this.http
-      .get<any>('http://114.119.173.133:8080/insurtech/api/v1/solutionProducts',{
+      .get<any>('http://94.74.114.51:7080/insurtech/api/v1/solutionProducts',{
 
       })
       .pipe((res)=>{
@@ -43,7 +43,7 @@ export class UserRegisterService{
   }
   getUsernames(email:string,password:string){
     return this.http
-    .get<any>('http://114.119.173.133:8080/insurtech/api/v1/user?email= '+email+' &password= '+password+' ',{
+    .get<any>('http://94.74.114.51:7080/insurtech/api/v1/user?email= '+email+' &password= '+password+' ',{
 
 
     })
@@ -67,7 +67,7 @@ export class UserRegisterService{
       .set('password', password);
 
     return this.http.get<any>(
-      'http://114.119.173.133:8080/insurtech/api/v1/user',
+      'http://94.74.114.51:7080/insurtech/api/v1/user',
       { params }
     );
   }
