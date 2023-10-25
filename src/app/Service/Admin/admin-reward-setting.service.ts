@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-import { HttpParams } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class adminRewardSettingService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   addReward(reward: any) {
     return this.http
@@ -19,28 +17,9 @@ export class adminRewardSettingService {
   }
 
   deleteReward(rewardIds: any) {
-    // const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards';
-    const url = 'http://localhost:7080/insurtech/api/v1/rewards';
-    // ส่ง request ในรูปแบบ DELETE และใส่ข้อมูลใน request body
+    const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards';
     return this.http
-      .delete<any>( url, { body: rewardIds })
+      .delete<any>(url, { body: rewardIds })
       .pipe((res: any) => res);
   }
-
-
-
-
-
-
-  // deleteReward(rewardIds: any) {
-  //   const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards/';
-    
-  //   // Pass the rewardIds array in the request body
-  //   return this.http
-  //     .request<any>('delete', url, { body: rewardIds })
-  //     .pipe((res: any) => res);
-  // }
-  
-  
-  
 }
