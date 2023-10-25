@@ -135,7 +135,14 @@
 </div>
 
 <div class="container" *ngIf="showTable">
-  <div style="display: flex; justify-content: center; align-items: center; margin-top: -1rem;">
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -1rem;
+    "
+  >
     <ng-container>
       <div class="card col-12 col-offset-6 md:col-10 m-0 py-0">
         <p-card>
@@ -155,6 +162,8 @@
                   'justify-content': 'center'
                 }"
               ></p-button>
+              <p-toast></p-toast>
+              <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
               <p-button
                 label="ลบ"
                 icon="pi pi-trash"
@@ -201,6 +210,9 @@
             </ng-template>
             <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
               <tr>
+                <!-- <td class="text-center">
+                  <button (click)="editData(data)">Edit</button>
+                </td> -->
                 <td class="text-center">
                   <p-tableCheckbox [value]="data"></p-tableCheckbox>
                 </td>
@@ -219,3 +231,15 @@
     </ng-container>
   </div>
 </div>
+<!-- <p-dialog header="Edit Data" [(visible)]="displayEditDialog">
+  <div *ngFor="let data of selectedData; let i = index">
+    <input [(ngModel)]="data.rewardDate" />
+    <input [(ngModel)]="data.rewardTime" />
+    <input [(ngModel)]="data.rewardQuantity" />
+    <input [(ngModel)]="data.rewardTitle" />
+  </div>
+
+
+  <button (click)="saveEdit()">Save</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</p-dialog> -->

@@ -17,4 +17,30 @@ export class adminRewardSettingService {
       .get<any>('http://94.74.114.51:7080/insurtech/api/v1/rewards')
       .pipe((res: any) => res);
   }
+
+  deleteReward(rewardIds: any) {
+    // const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards';
+    const url = 'http://localhost:7080/insurtech/api/v1/rewards';
+    // ส่ง request ในรูปแบบ DELETE และใส่ข้อมูลใน request body
+    return this.http
+      .delete<any>( url, { body: rewardIds })
+      .pipe((res: any) => res);
+  }
+
+
+
+
+
+
+  // deleteReward(rewardIds: any) {
+  //   const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards/';
+    
+  //   // Pass the rewardIds array in the request body
+  //   return this.http
+  //     .request<any>('delete', url, { body: rewardIds })
+  //     .pipe((res: any) => res);
+  // }
+  
+  
+  
 }

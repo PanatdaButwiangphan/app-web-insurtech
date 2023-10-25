@@ -11,10 +11,10 @@
               [class]="item.icon"
               style="font-size: 3.5rem;"
             ></i>
-            <span class="custom-header">{{ item.header }}</span>
+            <span class="custom-header">{{ item.solutionProductTitle }}</span>
           </div>
           <p style="margin-top: 1rem;">
-            {{ item.content }}
+            {{ item.solutionProductDetail }}
           </p>
           <ng-template pTemplate="footer">
             <a [href]="item.pdfUrl" target="_blank" rel="noopener noreferrer">
