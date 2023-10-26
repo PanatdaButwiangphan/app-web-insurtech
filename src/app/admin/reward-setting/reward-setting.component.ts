@@ -48,8 +48,9 @@ export class RewardSettingComponent {
       this.reward != '' &&
       this.rewardamount != 0
     ) {
+      let dateFormat = this.date.split('-')
       const rewardSetting = {
-        rewardDate: this.date,
+        rewardDate: `${dateFormat[1]}-${dateFormat[0]}-${dateFormat[2]}`,
         rewardTitle: this.reward,
         rewardQuantity: this.rewardamount,
         rewardTime: this.time,
@@ -88,15 +89,11 @@ export class RewardSettingComponent {
         header: 'ยืนยันการลบ',
         icon: 'pi pi-info-circle',
         accept: () => {
-          
           const rewardIds = this.selectedData.map((item) => item.rewardId as number);
-         
-         
           this.adminRewardService.deleteReward(rewardIds).subscribe(
             () => {
               console.log('Rewards deleted from the database:', rewardIds);
               this.deleteRewardsLocally(rewardIds);
-             
             },
             (error) => {
               console.error('Error deleting rewards:', error);
@@ -121,16 +118,14 @@ export class RewardSettingComponent {
     }
   }
   
-
   private deleteRewardsLocally(rewardIds: number[]) {
     this.table = this.table.filter(
       (item) => !rewardIds.includes(item.rewardId)
     );
     console.log('Rewards deleted locally:', rewardIds);
   }
- 
   displayEditDialog: boolean = false;
 
 
-  
+
 }
