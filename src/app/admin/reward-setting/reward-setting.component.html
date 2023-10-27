@@ -150,18 +150,7 @@
             <div
               class="col-12 flex align-items-center justify-content-end mb-2 -mt-4"
             >
-              <p-button
-                label="บันทึก"
-                icon="pi pi-save"
-                styleClass="p-button-success"
-                [style]="{
-                  width: '100px',
-                  height: '40px',
-                  display: 'flex',
-                  'align-items': 'center',
-                  'justify-content': 'center'
-                }"
-              ></p-button>
+              
               <p-toast></p-toast>
               <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
               <p-button
@@ -191,6 +180,7 @@
             [showCurrentPageReport]="true"
             [autoLayout]="true"
             dataKey="rewardId"
+            editMode="row"
             [paginator]="true"
             [rows]="5"
             [selectionPageOnly]="true"
@@ -206,23 +196,105 @@
                 <th style="min-width: 50px; text-align: center">เวลา</th>
                 <th style="min-width: 50px; text-align: center">จำนวน</th>
                 <th style="min-width: 100px; text-align: center">รางวัล</th>
+                <th style="min-width: 100px; text-align: center">edit</th>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
-              <tr>
-                <!-- <td class="text-center">
-                  <button (click)="editData(data)">Edit</button>
-                </td> -->
+            <ng-template
+              pTemplate="body"
+              let-data
+              let-editing="editing"
+              let-rowIndex="rowIndex"
+            >
+              <tr [pEditableRow]="data">
                 <td class="text-center">
-                  <p-tableCheckbox [value]="data"></p-tableCheckbox>
-                </td>
+                <p-tableCheckbox  [value]="data"></p-tableCheckbox></td>
                 <td class="text-center">
                   {{ rowIndex + 1 }}
+                <td class="text-center">
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="data.date" />
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                      {{ data.date }}
+                    </ng-template>
+                  </p-cellEditor>
                 </td>
-                <td class="text-center">{{ data.date }}</td>
-                <td class="text-center">{{ data.time }}</td>
-                <td class="text-right">{{ data.rewardQuantity }}</td>
-                <td>{{ data.rewardTitle }}</td>
+                <td class="text-center">
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="data.time" />
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                      {{ data.time }}
+                    </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td class="text-center">
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <input
+                        pInputText
+                        type="text"
+                        [(ngModel)]="data.rewardQuantity"
+                      />
+                    </ng-template>
+                  
+                    <ng-template pTemplate="output">
+                      {{ data.rewardQuantity }}
+                    </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td class="text-center">
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <input
+                        pInputText
+                        type="text"
+                        [(ngModel)]="data.rewardTitle"
+                      />
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                      {{ data.rewardTitle }}
+                    </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td class="text-center">
+                  <div
+                    class="flex align-items-center justify-content-center gap-2"
+                  >
+                    <button
+                      *ngIf="!editing"
+                      pButton
+                      pRipple
+                      type="button"
+                      pInitEditableRow
+                      icon="pi pi-pencil"
+                      (click)="onRowEditInit(data)"
+                      class="p-button-rounded p-button-text"
+                    ></button>
+                    <button
+                      *ngIf="editing"
+                      pButton
+                      pRipple
+                      type="button"
+                      pSaveEditableRow
+                      icon="pi pi-check"
+                      (click)="onRowEditSave(data)"
+                      class="p-button-rounded p-button-text p-button-success mr-2"
+                    ></button>
+                    <button
+                      *ngIf="editing"
+                      pButton
+                      pRipple
+                      type="button"
+                      pCancelEditableRow
+                      icon="pi pi-times"
+                      (click)="onRowEditCancel(data, rowIndex)"
+                      class="p-button-rounded p-button-text p-button-danger"
+                    ></button>
+                  </div>
+                </td>
               </tr>
             </ng-template>
           </p-table>
@@ -231,15 +303,3 @@
     </ng-container>
   </div>
 </div>
-<!-- <p-dialog header="Edit Data" [(visible)]="displayEditDialog">
-  <div *ngFor="let data of selectedData; let i = index">
-    <input [(ngModel)]="data.rewardDate" />
-    <input [(ngModel)]="data.rewardTime" />
-    <input [(ngModel)]="data.rewardQuantity" />
-    <input [(ngModel)]="data.rewardTitle" />
-  </div>
-
-
-  <button (click)="saveEdit()">Save</button>
-  <button (click)="cancelEdit()">Cancel</button>
-</p-dialog> -->

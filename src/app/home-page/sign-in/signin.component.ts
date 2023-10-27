@@ -27,44 +27,44 @@ export class SigninComponent {
         this.router.navigate(['/user']);
       }
     }
+    if (this.email.trim() !== '' && this.password.trim() !== '') {
+      this.userRegisterService.userSignIn(this.email, this.password).subscribe(
+        (response) => {
+          if ((response as any).userEmail === this.email) {
+            if (this.email === 'ad2566' && this.password === 'ad6652') {
+              const username = (response as any).userUsername;
+              // ตั้งค่า username ใน UserRegisterService
+              this.userRegisterService.setUsername(username);
+              this.router.navigate(['/menu']);
+            } else {
+            // ดึงค่า username ออกมาจาก response
+            const username = (response as any).userUsername;
+            // ตั้งค่า username ใน UserRegisterService
+            this.userRegisterService.setUsername(username);
+            this.router.navigate(['/user']);
+
+            }
+          } else {
+            this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+          }
+        },
+        (error) => {
+          console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
+          this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
+        }
+      );
+    } else {
+      this.openDialog('กรุณากรอกอีเมลผู้ใช้และรหัสผ่าน');
+    }
+  console.log('Email:', this.email);
+  console.log('Password:', this.password);
+  
     console.log('Email:', this.email);
     console.log('Password:', this.password);
   }
   
-  // สำหรับ API
-  // login() {
-  //   if (this.email.trim() !== '' && this.password.trim() !== '') {
-  //     this.userRegisterService.userSignIn(this.email, this.password).subscribe(
-  //       (response) => {
-  //         if ((response as any).userEmail === this.email) {
-  //           if (this.email === 'ad2566' && this.password === 'ad6652') {
-  //             const username = (response as any).userUsername;
-  //             // ตั้งค่า username ใน UserRegisterService
-  //             this.userRegisterService.setUsername(username);
-  //             this.router.navigate(['/menu']);
-  //           } else {
-  //           // ดึงค่า username ออกมาจาก response
-  //           const username = (response as any).userUsername;
-  //           // ตั้งค่า username ใน UserRegisterService
-  //           this.userRegisterService.setUsername(username);
-  //           this.router.navigate(['/user']);
-
-  //           }
-  //         } else {
-  //           this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
-  //         }
-  //       },
-  //       (error) => {
-  //         console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
-  //         this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
-  //       }
-  //     );
-  //   } else {
-  //     this.openDialog('กรุณากรอกอีเมลผู้ใช้และรหัสผ่าน');
-  //   }
-  // console.log('Email:', this.email);
-  // console.log('Password:', this.password);
-  // }
+  
+  
 
   openDialog(message: string) {
     this.dialog.open(DialogSignInComponent, {
