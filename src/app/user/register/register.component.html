@@ -1,136 +1,56 @@
 <app-navbar></app-navbar>
 
-<!-- <div class="card flex justify-content-center">
+<div class="card flex justify-content-center mt-4">
   <p-card
+    header="Register"
+    class="w-20rem"
     [style]="{
-      width: '326px',
-
-      'margin-left':'2.5em',
-      'margin-top': '5em ',
-      'background':
+      background:
         'linear-gradient(180deg, #6C4DEA 1%, #3C24B7 58%, #281062 100%)',
-        'border-radius': '22px',
-
-
+      'border-radius': '22px'
     }"
   >
-    <h2 style="color: azure; text-align: center">Register</h2>
+    <span class="p-float-label">
+      <input pInputText id="username" [(ngModel)]="username" />
+      <label style="color: white" htmlFor="username">FirstName</label>
+    </span>
+    <span class="p-float-label mt-4">
+      <input pInputText id="email" [(ngModel)]="email" />
+      <label style="color: white" htmlFor="email">email</label>
+    </span>
+    <span class="p-float-label mt-4">
+      <input pInputText id="telephoneNo" [(ngModel)]="PhoneNo" />
+      <label style="color: white" htmlFor="telephoneNo">telephoneNo</label>
+    </span>
+    <span class="p-float-label mt-4">
+      <input pInputText id="Company" [(ngModel)]="Company" />
+      <label style="color: white" htmlFor="Company">Company</label>
+    </span>
 
-    <p>
-      <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-        <input
-          pInputText 
-          id="username"
-          [style]="{
-            width: '300px',
-            'border-radius': '15px',
-            background: ' #081D5B',
-            color:'white'
-
-          }"
-          [(ngModel)]="username"
-        />
-        <label htmlFor="username" 
-        [style]="{'color':'white'}"
-        >Username</label>
-      </span>
-      <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      >
-        <input
-          pInputText
-          id="e-mail"
-          [style]="{
-            width: '300px',
-            'border-radius': '15px',
-            background: ' #081D5B',
-            color:'white'
-          }"
-          [(ngModel)]="email"
-        />
-        <label htmlFor="e-mail" [style]="{'color':'white'}">e-mail</label>
-      </span>
-
-
-      <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      >
-        <input
-          pInputText
-          id="TelephoneNo"
-          [style]="{
-            width: '300px',
-            'border-radius': '15px',
-            background: ' #081D5B',
-            color:'white'
-          }"
-          [(ngModel)]="PhoneNo"
-        />
-        <label htmlFor="TelephoneNo" [style]="{'color':'white'}">TelephoneNo.</label>
-      </span>
-      <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      >
-        <input
-          pInputText
-          id="Company"
-          [style]="{
-            width: '300px',
-            'border-radius': '15px',
-            background: ' #081D5B',
-            color:'white'
-          }"
-          [(ngModel)]="Company"
-        />
-        <label htmlFor="Company" [style]="{'color':'white'}">Company</label>
-      </span>
-      <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      > -->
-<div class="register-page">
-  <div class="form">
-    <form class="register-form">
-      <h1 style="color: white">Register</h1>
-      <input type="text" placeholder="FirstName" class="color" [(ngModel)]="username" name="username">
-      <input type="text" placeholder="email" [(ngModel)]="email" name="email">
-      <input type="text" placeholder="TelephoneNo." [(ngModel)]="PhoneNo" name="telephoneNo">
-      <input type="text" placeholder="Company" [(ngModel)]="Company" name="company">
-      
-      <div class="card">
-        <p-multiSelect
-          [style]="{
-          width: '17em',  
+    <span class="p-float-label mt-4">
+      <p-multiSelect
+        [style]="{
+          width: '100%',
           background: '#081D5B',
-          color:'white',
           'border-radius': '15px',
+          border: '0',
+          
         }"
-          [options]="solution"
-          [(ngModel)]="selectedSolution"
-          defaultLabel="Select a Solution"
-          optionLabel="solutionProductTitle"
-          [ngModelOptions]="{ standalone: true }"
-        >
-        </p-multiSelect>
-      </div>
-      <button
-        style="
-          background: linear-gradient(90deg, #332bcc 0%, #7b42c5 100%);
-          border-radius: 10px;
-          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-            0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-            0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-        "
-        (click)="register()"
-      >
-        Register
-      </button>
-      <p class="message">
-        Already registered?      <a routerLink="/sign-in" style="color: white"> Sign In  </a>
-      </p>
-    </form>
-  </div>
+        [options]="solution"
+        [(ngModel)]="selectedSolution"
+        defaultLabel="Select a Solution"
+        optionLabel="solutionProductTitle"
+        [ngModelOptions]="{ standalone: true }"
+      ></p-multiSelect>
+      <label style="color: white;" for="ms-solution">Select Solution</label>
+    </span>
+
+    <div class="card flex justify-content-center mt-4">
+      <button pButton pRipple label="Register" class="bt-regis "  label="Register" (click)="register()"></button>
+    </div>
+    
+    <p class="message" style="text-align: center; color: gray;">
+        Already registered?      <a routerLink="/sign-in" style="color: white;"> Sign In  </a>
+    </p>
+  </p-card>
 </div>

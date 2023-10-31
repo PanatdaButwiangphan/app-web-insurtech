@@ -9,7 +9,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./content.component.css'],
 })
 export class ContentComponent {
-  solutions: any[] = [];
+  solutions: any[] = [
+    {  imagePath: 'clound.jpg' },
+    {  imagePath: 'what-is-cybersecurity.jpg' },
+    {  imagePath: 'Digital Business Solutions.jpg' },
+    {  imagePath: 'Data & Analytic Solutions.jpg' },
+    {  imagePath: 'Professional Service.jpg' },
+    { imagePath: 'Financial & Banking Services.jpg' },
+    { imagePath: 'Communication Navigation Surveillance.jpg' },
+    {  imagePath: 'Media Innovation.jpg' },
+  
+  ];
 
   images: string[] = [
     'assets/images/giveaway winner.png',

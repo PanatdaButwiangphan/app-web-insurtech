@@ -9,6 +9,8 @@ export class ChangePasswordComponent {
   value!: string;
   values!: string;
 
-
+change(){
+  
+}
 
 }

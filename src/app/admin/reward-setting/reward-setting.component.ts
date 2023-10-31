@@ -15,6 +15,8 @@ import { adminRewardSettingService } from 'src/app/Service/Admin/admin-reward-se
   providers: [ConfirmationService, MessageService],
 })
 export class RewardSettingComponent {
+  space: string = ' ';
+
   showTable: boolean = true;
   date: string = '';
   time: string = '';
@@ -28,7 +30,13 @@ export class RewardSettingComponent {
   table!: Data[];
 
   clonedDatas: { [s: string]: Data } = {};
+  rewards: any[] = [
+    { name: 'รางวัลที่ 1', value: 1 },
+    { name: 'รางวัลที่ 2', value: 2 },
+    { name: 'รางวัลที่ 3', value: 3 },
+  ];
 
+  
   constructor(
     private adminRewardService: adminRewardSettingService,
     private confirmationService: ConfirmationService,
@@ -54,7 +62,6 @@ export class RewardSettingComponent {
     ) {
       let dateFormat = this.date.split('-');
 
-     
       const rewardSetting = {
         rewardDate: `${dateFormat[1]}-${dateFormat[0]}-${dateFormat[2]}`,
         rewardTitle: this.reward,
@@ -152,44 +159,33 @@ export class RewardSettingComponent {
     this.clonedDatas[data['id'] as string] = { ...data };
   }
 
-  onRowEditSave(data: Data) {
-    if (data['rewardQuantity'] > 0) {
-      // Assuming data['id'] is the identifier for the data you want to update
-      const dataId = data['id'];
-
-      // Assuming your backend API endpoint for updating data is '/api/updateData'
-      this.http.patch(`http://localhost:7080/insurtech/api/v1/rewards`, data)
-        .subscribe(
-          (response) => {
-            delete this.clonedDatas[dataId];
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Success',
-              detail: 'Data is updated',
-            });
-          },
-          (error) => {
-            console.error('Error updating data:', error);
-            this.messageService.add({
-              severity: 'error',
-              summary: 'Error',
-              detail: 'Failed to update data',
-            });
-          }
-        );
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Invalid Data',
-      });
-    }
+ onRowEditSave(data: Data) {
+  if (data['rewardQuantity'] > 0) {
+    const data = this.selectedData.map(
+      (item) => item.data as string
+    );
+    this.adminRewardService.updateData(data)
+      .subscribe(
+        (response) => {
+          console.log("update success");
+          
+        },
+        (error) => {
+          console.error('Error saving/updating data:', error);
+          // ดำเนินการเมื่อเกิดข้อผิดพลาด
+        }
+      );
+  } else {
+    // ข้อมูลไม่ถูกต้อง
   }
+}
   
+
+
 
   onRowEditCancel(data: Data, index: number) {
     this.table[index] = this.clonedDatas[data['id'] as string];
     delete this.clonedDatas[data['id'] as string];
   }
-
+  
 }

@@ -1,21 +1,35 @@
 <app-navbar></app-navbar>
 
-<div class="login-page">
-  <div class="form">
-    <!-- <form class="register-form">
-      <input type="text" placeholder="name" [(ngModel)]="email"/>
-      <input type="password" placeholder="password"  [(ngModel)]="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#" >Sign In</a></p>
-    </form> -->
-    <form class="login-form">
-      <h2 style="color: white;">SignIn</h2>
-      <input type="text" placeholder="email" [(ngModel)]="email" name="email" />
-      <input type="password" placeholder="password" [(ngModel)]="password" name="password"/>
-      <button (click)="login()">login</button>
-      <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
-    </form>
-  </div>
+<div class="card flex justify-content-center mt-4">
+  <p-card
+    header="Sign in"
+    class="w-20rem"
+    [style]="{
+      background:
+        'linear-gradient(180deg, #6C4DEA 1%, #3C24B7 58%, #281062 100%)',
+      'border-radius': '22px'
+    }"
+  >
+    <span class="p-float-label">
+      <input pInputText id="email" [(ngModel)]="email" />
+      <label style="color: white" htmlFor="email">email</label>
+    </span>
+    <span class="p-float-label mt-4">
+      <p-password [(ngModel)]="password" [toggleMask]="true"></p-password>
+      <label style="color: white" htmlFor="password">password</label>
+    </span>
+    <div class="card flex justify-content-center mt-4">
+      <button
+        pButton
+        pRipple
+        label="Sign in"
+        class="bt-sign"
+        label="Sign in"
+        (click)="login()"
+      ></button>
+    </div>
+    <p class="message" style="color: gray; text-align: center;">
+      Not registered? <a style="color: white;" routerLink="/register">Create an account</a>
+    </p>
+  </p-card>
 </div>
-

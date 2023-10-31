@@ -18,15 +18,14 @@ export class adminRewardSettingService {
 
   deleteReward(rewardIds: any) {
     const url = 'http://94.74.114.51:7080/insurtech/api/v1/rewards';
-    
-
     return this.http
       .delete<any>(url, { body: rewardIds })
       .pipe((res: any) => res);
   }
-  updateData(data:  any) {
+  updateData(rewardId:  any) {
     const url ='http://localhost:7080/insurtech/api/v1/rewards'; 
-    return this.http.patch(url, data);
+    return this.http.patch(url, { body: rewardId })
+    .pipe((res: any) => res);
   }
   
 
